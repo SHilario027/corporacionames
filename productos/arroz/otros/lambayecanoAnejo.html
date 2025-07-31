@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+    <header>
+        <a href="../../../home.html" class="imgHeader">
+            <img src="../../../img/Corporación Ames.png" alt="Corporación Ames" width="190" height="100" class="imgHeader1">
+        </a>
+        <nav class="header">
+            <a href="../../../nosotros.html" class="headerN">Nosotros</a>
+            <a href="../arroz.html" class="headerA">Arroz</a>
+            <a href="https://wa.me/51993521845" class="headerC">Contáctanos</a>
+            <a href="../../products.html" class="headerButton">Productos</a>
+            <a href="#"class="menuBotton"onclick=showSidebar()>
+                <img src="../../../img/MenuBar.svg" alt="hamburger" class="hamburger" height="35px">
+            </a>
+        </nav>
+        <nav class="sidebar">
+            <a href="#" onclick=hideSidebar()>
+                <img src="../../../img/CloseSign.svg" alt="close" height="35px">
+            </a>
+            <a href="../../../nosotros.html" class="sideN">Nosotros</a>
+            <a href="../arroz.html" class="sideA">Arroz</a>
+            <a href="" class="sideC">Contáctanos</a>
+            <a href="../../products.html" class="sideButton">Productos</a>
+        </nav>
+        <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
+    </header>
+    <section class="productForSale">
+        <div class="content2">
+            <div class="imgGallery">
+                <div class="thumbnailGallery">
+                    <img src="../../../img/Arroz.png" alt="" onclick="changeImage(this)">
+                    <!-- <img src="" alt="" onclick="changeImage(this)">
+                    <img src="" alt="" onclick="changeImage(this)">
+                    <img src="" alt="" onclick="changeImage(this)"> -->
+                </div>
+                <div class="mainImageWrapper" id="mainImageWrapper">
+                    <img class="producto1" id="mainProductImage" src="../../../img/Arroz.png" alt="producto">
+                    <div class="imageDots">
+                        <span class="dot active" onclick="goToImage(0)"></span>
+                        <!-- <span class="dot" onclick="goToImage(1)"></span>
+                        <span class="dot" onclick="goToImage(2)"></span>
+                        <span class="dot" onclick="goToImage(3)"></span> -->
+                    </div>
+                </div>
+            </div>
+            <div class="description">
+                <div class="descripcionPre">
+                  <h1 class="nombre">Lambayecano Añejo</h1>
+                  <div>
+                    <li>Saco de 49kg</li>
+                  </div>
+                </div>
+                <div class="salePrice">
+                    <div>
+                        <div class="precios">
+                            <h3 class="tituloP">Precio:</h3>
+                            <h3 class="precio">S/182.00</h3>
+                        </div>
+                        <h4 class="disclaimer">*Precios aproximados, sujetos a variación diaria</h4>
+                    </div>
+                    <div class="saleButton" onclick="mensajeWhatsapp()">Comprar</div>
+                    <script>
+                        function mensajeWhatsapp(){
+                            const numero = 51993521845;
+                            const producto = "Lambayecano Añejo";
+                            const mensaje = `Hola, estoy interesado en el producto ${producto}`;
+                            const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
+                            window.open(url, '_blank');
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        const thumbnails = document.querySelectorAll('.thumbnailGallery img');
+        const mainImage = document.getElementById('mainProductImage');
+        const dots = document.querySelectorAll('.dot');
+      
+        function changeImage(imgElement) {
+          mainImage.src = imgElement.src;
+          thumbnails.forEach(img => img.classList.remove('selected'));
+          imgElement.classList.add('selected');
+          updateDots(Array.from(thumbnails).indexOf(imgElement));
+        }
+      
+        function goToImage(index) {
+          const img = thumbnails[index];
+          if (img) {
+            changeImage(img);
+            img.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          }
+        }
+      
+        function updateDots(activeIndex) {
+          dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === activeIndex);
+          });
+        }
+      
+        document.addEventListener('DOMContentLoaded', () => {
+          thumbnails[0].classList.add('selected');
+          updateDots(0);
+        });
+
+        let startX = 0;
+        let endX = 0;
+        
+        const wrapper = document.getElementById('mainImageWrapper');
+        
+        wrapper.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        }, false);
+        
+        wrapper.addEventListener('touchend', (e) => {
+            endX = e.changedTouches[0].clientX;
+            handleSwipe();
+        }, false);
+        
+        function handleSwipe() {
+            const deltaX = endX - startX;
+            const threshold = 50;
+        
+            const currentIndex = Array.from(thumbnails).findIndex(img => img.classList.contains('selected'));
+        
+            if (deltaX > threshold && currentIndex > 0) {
+              goToImage(currentIndex - 1);
+            } else if (deltaX < -threshold && currentIndex < thumbnails.length - 1) {
+              goToImage(currentIndex + 1);
+            }
+        }
+    </script>
+
+    <section class="recommended">
+        <div class="content5">
+            <h1>También podría interesarte</h1>
+            <div class="recomendaciones">
+                <a href="frayMartin.html">
+                    <img src="../../../img/Arroz.png" alt="Fray Martín">
+                    <div class="products">Fray Martín</div>
+                </a>
+                <a href="faraonNaranja.html">
+                    <img src="../../../img/FaraónNaranja.png" alt="Faraón Naranja">
+                    <div class="products">Faraón Naranja</div>
+                </a>
+                <a href="gourmetCeleste.html">
+                    <img src="../../../img/GourmetCeleste.png" alt="Gourmet Celeste">
+                    <div class="products">Gourmet Celeste</div>
+                </a>
+                <a href="gourmetRojo.html">
+                    <img src="../../../img/GourmetRojo.png" alt="Gourmet Rojo">
+                    <div class="products">Gourmet Rojo</div>
+                </a>
+                <a href="caserita.html">
+                    <img src="../../../img/CaseritaFucsia.png" alt="Caserita Fucsia">
+                    <div class="products">Caserita Fucsia</div>
+                </a>
+                <a href="tacuariGourmetUruguayo.html">
+                    <img src="../../../img/TacuariGourmetUruguayo.png" alt="Tacuari Gourmet Uruguayo">
+                    <div class="products">Tacuari Gourmet Uruguayo</div>
+                </a>
+                <a href="damboOlimar.html">
+                    <img src="../../../img/Arroz.png" alt="Dambo Olimar">
+                    <div class="products">Dambo Olimar</div>
+                </a>
+                <a href="descarteLamposAzul.html">
+                    <img src="../../../img/Lampos_Azul.png" alt="Descarte Lampus Azul">
+                    <div class="products">Descarte Lampos Azul</div>
+                </a>
+                <a href="taypaAmarillo.html">
+                    <img src="../../../img/TaypaAmarillo.png" alt="Taypa Amarillo">
+                    <div class="products">Taypa Amarillo</div>
+                </a>
+                <a href="taypaNegro.html">
+                    <img src="../../../img/TaypaNegro (1).png" alt="Taypa Negro">
+                    <div class="products">Taypa Negro</div>
+                </a>
+                <a href="taypaCeleste.html">
+                    <img src="../../../img/TaypaCeleste1.png" alt="Taypa Celeste">
+                    <div class="products">Taypa Celeste</div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <ul class="socialIcon">
+            <li class="iconElem">
+                <a href="https://www.facebook.com/p/Corporaci%C3%B3n-Ames-SAC-100054238940827
+                " class="icon">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="iconElem">
+                <a href="https://wa.me/51993521845
+                " class="icon">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <ul class="menuFooter">
+            <li class="menuElem">
+                <a href="../../../home.html" class="menuIcon">Inicio</a>
+                <a href="https://wa.me/51993521845" class="menuIcon">Contacto</a>
+                <a href="../../../nosotros.html" class="menuIcon">Nosotros</a>
+                <a href="https://forms.gle/JMNT51iQpTB4taZ3A" class="menuIcon">Libro de Reclamaciones</a>
+            </li>
+        </ul>
+        <p class="footerText">&copy; 2025 Corporación Ames | Todos los derechos reservados</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

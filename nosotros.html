@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="home.html" class="imgHeader">
+            <img src="img/Corporación Ames.png" alt="Corporación Ames" width="190" height="100" class="imgHeader1">
+        </a>
+        <nav class="header">
+            <a href="nosotros.html" class="headerN">Nosotros</a>
+            <a href="productos/arroz/arroz.html" class="headerA">Arroz</a>
+            <a href="https://wa.me/51993521845" class="headerC">Contáctanos</a>
+            <a href="productos/products.html" class="headerButton">Productos</a>
+            <a href="#"class="menuBotton"onclick=showSidebar()>
+                <img src="img/MenuBar.svg" alt="hamburger" class="hamburger" height="35px">
+            </a>
+        </nav>
+        <nav class="sidebar">
+            <a href="#" onclick=hideSidebar()>
+                <img src="img/CloseSign.svg" alt="close" height="35px">
+            </a>
+            <a href="nosotros.html" class="sideN">Nosotros</a>
+            <a href="productos/arroz/arroz.html" class="sideA">Arroz</a>
+            <a href="" class="sideC">Contáctanos</a>
+            <a href="productos/products.html" class="sideButton">Productos</a>
+        </nav>
+        <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
+    </header>
+    <section class="section1">
+        <div class="textTittle">
+            <h2>Sobre Nosotros</h2>
+            <p>En Corporación Ames, nos especializamos en la venta de abarrotes al por mayor, ofreciendo productos de primera necesidad con altos estándares de calidad y a precios competitivos. Somos una empresa líder y confiable en el rubro de alimentos, dedicada a brindar un servicio eficiente, personalizado y con garantía de satisfacción. 
+            Nuestra misión es abastecer negocios con productos de confianza, apoyando su crecimiento con un buen servicio, compromiso constante y con precios competitivos en el mercado.</p>
+        </div>
+        <img class="imgAbout" src="img/CorpA.JPG" alt="" width="580" height="380">
+    </section>
+    <section class="section2">
+        <section class="imgSection">
+            <img class="img1" src="img/grupo.JPG" alt="" width="260" height="212">
+            <img class="img1" src="img/CorpA2.JPG" alt="" width="260" height="212">
+        </section>
+        <section class="textTittle2">
+            <h2>Historia</h2>
+            <div class="content4">
+                <p>Corporación Ames nació hace más de 20 años como respuesta a la creciente demanda de alimentos en el distrito de San Juan de Miraflores. La empresa comenzó con el reparto de mercadería desde La Victoria hasta San Juan de Miraflores, atendiendo con esfuerzo y compromiso a cada cliente.</p>
+                <br>
+                <p>Desde sus inicios, Corporación Ames se destacó por escuchar activamente a sus clientes, lo que impulsó la apertura de la primera tienda en el distrito. Este acercamiento nos permitió crecer junto a la comunidad y fortalecer la confianza de nuestros clientes.</p>
+                <br>
+                <p>Hoy, más de dos décadas después, mantenemos la misma actitud de servicio y compromiso, ofreciendo una atención cercana, productos de calidad y un servicio eficiente, reafirmando nuestro liderazgo en el rubro de abarrotes al por mayor y por menor en San Juan de Miraflores.    </p>
+            </div>
+        </section>
+        <section class="imgSection2">
+            <img class="img2" src="img/CorpA3.JPG" alt="" width="260" height="212">
+            <img class="img2" src="img/CorpA4.JPG" alt="" width="260" height="212">
+        </section>
+    </section>
+    <footer>
+        <ul class="socialIcon">
+            <li class="iconElem">
+                <a href="https://www.facebook.com/p/Corporaci%C3%B3n-Ames-SAC-100054238940827
+                " class="icon">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="iconElem">
+                <a href="https://wa.me/51993521845
+                " class="icon">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <ul class="menuFooter">
+            <li class="menuElem">
+                <a href="home.html" class="menuIcon">Inicio</a>
+                <a href="https://wa.me/51993521845" class="menuIcon">Contacto</a>
+                <a href="nosotros.html" class="menuIcon">Nosotros</a>
+                <a href="https://forms.gle/JMNT51iQpTB4taZ3A" class="menuIcon">Libro de Reclamaciones</a>
+            </li>
+        </ul>
+        <p class="footerText">&copy; 2025 Corporación Ames | Todos los derechos reservados</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>

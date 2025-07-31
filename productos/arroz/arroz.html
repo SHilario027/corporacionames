@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header>
+        <a href="../../home.html" class="imgHeader">
+            <img src="../../img/Corporación Ames.png" alt="Corporación Ames" width="190" height="100" class="imgHeader1">
+        </a>
+        <nav class="header">
+            <a href="../../nosotros.html" class="headerN">Nosotros</a>
+            <a href="arroz.html" class="headerA">Arroz</a>
+            <a href="https://wa.me/51993521845" class="headerC">Contáctanos</a>
+            <a href="../products.html" class="headerButton">Productos</a>
+            <a href="#"class="menuBotton"onclick=showSidebar()>
+                <img src="../../img/MenuBar.svg" alt="hamburger" class="hamburger" height="35px">
+            </a>
+        </nav>
+        <nav class="sidebar">
+            <a href="#" onclick=hideSidebar()>
+                <img src="../../img/CloseSign.svg" alt="close" height="35px">
+            </a>
+            <a href="../../nosotros.html" class="sideN">Nosotros</a>
+            <a href="arroz.html" class="sideA">Arroz</a>
+            <a href="" class="sideC">Contáctanos</a>
+            <a href="../products.html" class="sideButton">Productos</a>
+        </nav>
+        <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
+    </header>
+    <section class="entrada">
+        <img src="../../img/CorpA3.JPG" alt="">
+    </section>
+    <section class="contenedor3">
+        <h1 class="titulo3">Nuestros Productos</h1>
+        <div class="simg2">
+            <a href="induamerica/induamerica.html">
+                <img src="../../img/induamerica (2).png" alt="">
+                <div class="products">Induamerica</div>
+            </a>
+            <a href="molinoSaman/MolinoSaman.html">
+                <img src="../../img/MolinoSaman.png" alt="">
+                <div class="products">Molino Samán</div>
+            </a>
+            <a href="molinoMolicentro/MolinoMolicentro.html">
+                <img src="../../img/MolinoMolicentro.png" alt="">
+                <div class="products">Molino Molicentro</div>
+            </a>
+            <a href="otros/otrasMarcas.html">
+                <img src="../../img/Arroz.png" alt="">
+                <div class="products">Otras Marcas de Arroz</div>
+            </a>
+        </div>
+    </section>
+    <footer>
+        <ul class="socialIcon">
+            <li class="iconElem">
+                <a href="https://www.facebook.com/p/Corporaci%C3%B3n-Ames-SAC-100054238940827
+                " class="icon">
+                    <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+            </li>
+            <li class="iconElem">
+                <a href="https://wa.me/51993521845
+                " class="icon">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+            </li>
+        </ul>
+        <ul class="menuFooter">
+            <li class="menuElem">
+                <a href="../../home.html" class="menuIcon">Inicio</a>
+                <a href="https://wa.me/51993521845" class="menuIcon">Contacto</a>
+                <a href="../../nosotros.html" class="menuIcon">Nosotros</a>
+                <a href="https://forms.gle/JMNT51iQpTB4taZ3A" class="menuIcon">Libro de Reclamaciones</a>
+            </li>
+        </ul>
+        <p class="footerText">&copy; 2025 Corporación Ames | Todos los derechos reservados</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
